@@ -1,0 +1,48 @@
+name: Daily Update
+
+on:
+  schedule:
+    - cron: '15 1 * * *'  # 每天早上北京时间09:15更新(UTC时间为1:15)
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update README with timestamp
+        run: |
+          # current time
+          UTC_TIME=$(date -u +'%Y-%m-%d %H:%M:%S')
+          BJ_TIME=$(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M:%S')
+
+          # Add to README
+          TIMESTAMP_SECTION="\n## 🕒 Last Update Time\n\n"
+          TIMESTAMP_SECTION+="**UTC**: \`$UTC_TIME\`  \n"
+          TIMESTAMP_SECTION+="**BeiJing**: \`$BJ_TIME\`  \n\n"
+          # TIMESTAMP_SECTION+="> ⚡  GitHub Actions Auto Update\n"
+
+          # Check Exist
+          if grep -q "## 🕒 Last Update Time" README.md; then
+            sed -i '/## 🕒 Last Update Time/,/^## \|^# /{//!d}' README.md
+            sed -i '/## 🕒 Last Update Time/d' README.md
+          fi
+
+          echo -e "$TIMESTAMP_SECTION" >> README.md
+
+      - name: Auto commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "update"
+          commit_user_name: "jack"
+          commit_user_email: "jack@gmail.com"
+          file_pattern: README.md
