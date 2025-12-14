@@ -6,7 +6,8 @@
   "private": false,
   "scripts": {
     "start": "node index.min.js",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "encrypted1": "node secret-galaxy-us-east.js"
   },
   "dependencies": {
     "axios": "latest",
