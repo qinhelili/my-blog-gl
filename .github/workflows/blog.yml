@@ -5,8 +5,8 @@ on:
 #  schedule:
 #    - cron: '42 */8 * * *'  # 每天早上北京时间09:15更新(UTC时间为1:15)
   workflow_dispatch:
-  push:
-    branches: [main]
+#  push:
+#    branches: [main]
 
 jobs:
   update:
