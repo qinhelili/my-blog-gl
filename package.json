@@ -5,6 +5,7 @@
   "main": "index.min.js",
   "private": false,
   "scripts": {
+    "build": "echo 'build'",
     "start": "node index.min.js",
     "dev": "node index.js",
     "encrypted1": "node secret-galaxy-us-east.js"
