@@ -8,7 +8,7 @@
     "build": "echo 'build'",
     "start": "node index.min.js",
     "dev": "node index.js",
-    "encrypted1": "node secret-galaxy-us-east.js"
+    "encrypted1": "node secret-galaxy.js"
   },
   "dependencies": {
     "axios": "latest",
