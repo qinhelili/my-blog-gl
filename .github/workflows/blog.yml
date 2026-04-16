@@ -3,7 +3,8 @@ name: Blog
 
 on:
   schedule:
-    - cron: '42 */8 * * *'  # 每天早上北京时间09:15更新(UTC时间为1:15)
+    - cron: "41 2 2-30/2 * *" #偶数天 UTC时间(17点41分) 对应北京时间(凌晨1点41分)
+    - cron: "12 15 1-31/2 * *" #奇数天 UTC时间(18点12分) 对应北京时间(凌晨2点12分)
   workflow_dispatch:
   push:
     branches: [main]
