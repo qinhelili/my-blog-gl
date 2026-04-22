@@ -11,8 +11,8 @@
     "encrypted1": "node secret-galaxy.js"
   },
   "dependencies": {
-    "axios": "latest",
-    "express": "^4.18.2"
+    "axios": "1.15.2",
+    "express": "4.18.2"
   },
   "engines": {
     "node": ">=14"
