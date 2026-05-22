@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "This is a blog project",
+  "description": "blog",
   "main": "index.min.js",
   "private": false,
   "scripts": {
