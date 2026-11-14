@@ -45,6 +45,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "update"
-          commit_user_name: "jack"
+          commit_user_name: "jackskykry"
           commit_user_email: "jack@gmail.com"
           file_pattern: README.md
