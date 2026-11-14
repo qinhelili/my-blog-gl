@@ -46,5 +46,5 @@ jobs:
         with:
           commit_message: "update"
           commit_user_name: "jackskykry"
-          commit_user_email: "jack@gmail.com"
+          commit_user_email: "jackskykry@gmail.com"
           file_pattern: README.md
